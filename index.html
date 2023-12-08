@@ -44,6 +44,169 @@ path {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+/* Animation 2 */
+.cf-container {
+  box-sizing: content-box;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cf-container .cf-flame-container {
+  width: 100px;
+  height: 100px;
+  bottom: 0px;
+  position: absolute;
+}
+.cf-container .cf-log-container {
+  width: 60%;
+  height: 100px;
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+}
+.cf-container .cf-flame-container#base-fire .cf-flame:nth-child(1) {
+  background: #c63509;
+  opacity: 0.95;
+}
+.cf-container .cf-flame-container#base-fire .cf-flame:nth-child(2) {
+  background: #cd4015;
+  width: 100px;
+  height: 100px;
+  opacity: 0.85;
+  left: 75px;
+}
+.cf-container .cf-flame-container#base-fire .cf-flame:nth-child(3) {
+  background: #d73e0f;
+  width: 60px;
+  height: 60px;
+  opacity: 0.85;
+  left: 130px;
+}
+.cf-container .cf-flame-container:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  bottom: 0px;
+  position: absolute;
+}
+.cf-container .cf-flame-container:nth-child(2) .cf-flame {
+  width: 75px;
+  height: 75px;
+  left: 75px;
+}
+
+.cf-log {
+  background: #723830;
+  width: 20px;
+  height: 30px;
+  transform-origin: center;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 0.5em;
+  box-shadow: 0 3px 10px #372113;
+  width: 100%;
+}
+.cf-log:nth-child(1) {
+  transform: rotate(15deg);
+}
+.cf-log:nth-child(2) {
+  transform: rotate(-15deg);
+}
+.cf-flame:nth-child(1) {
+  background: #f5ed8f;
+}
+.cf-flame:nth-child(2) {
+  background: #fde239;
+}
+.cf-flame:nth-child(3) {
+  background: #ffdc01;
+}
+.cf-flame:nth-child(4) {
+  background: #fdac01;
+}
+.cf-flame:nth-child(5) {
+  background: #d73e0f;
+}
+.cf-flame:nth-child(6) {
+  background: #cd4015;
+}
+.cf-flame:nth-child(7) {
+  background: #c63509;
+}
+.cf-flame:last-child {
+  background: #c63509;
+}
+.cf-flame {
+  background: #cd4015;
+  width: 100px;
+  height: 100px;
+  border-radius: 1em;
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
+}
+
+#fireNodes2 .cf-flame {
+  -webkit-animation: flameColor 1.5s ease-out infinite;
+          animation: flameColor 1.5s ease-out infinite;
+}
+
+@-webkit-keyframes flameColor {
+  0% {
+    background: #c63509;
+  }
+  20% {
+    background: #cd4015;
+  }
+  30% {
+    background: #fdac01;
+  }
+  50% {
+    background: #ffb401;
+  }
+  60% {
+    background: #fdac01;
+  }
+  70% {
+    background: #ffdc01;
+  }
+  80% {
+    background: #fde239;
+  }
+  100% {
+    background: #f5ed8f;
+  }
+}
+
+@keyframes flameColor {
+  0% {
+    background: #c63509;
+  }
+  20% {
+    background: #cd4015;
+  }
+  30% {
+    background: #fdac01;
+  }
+  50% {
+    background: #ffb401;
+  }
+  60% {
+    background: #fdac01;
+  }
+  70% {
+    background: #ffdc01;
+  }
+  80% {
+    background: #fde239;
+  }
+  100% {
+    background: #f5ed8f;
+  }
+}
+
   </style>
 
 </head>
@@ -545,8 +708,10 @@ path {
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Triangles - deer or rabbit Animation</h2>
+          <h2>Animations</h2>
         </div>
+        <div class="row  d-flex align-items-stretch">
+        <div class="col-lg-6 faq-item" data-aos="fade-up">
         <svg xmlns="http://www.w3.org/2000/svg" width="700" height="600" viewBox="0 0 700 600">
           <path id="path5419" d="m 627.55727,563.46269 -34.09265,-47.72968 39.14342,27.7792 z"/>
           <path id="path4232" d="m 602.30346,512.19745 -8.83884,3.53556 39.14342,27.7792 z"/>
@@ -644,10 +809,19 @@ path {
           <path id="path5359" d="m 233.14211,133.26761 -4.78119,-18.03226 12.45015,-6.00217 z"/>
           <path id="path5361" d="m 220.64211,56.481896 7.71881,58.753454 12.45015,-6.00217 z"/>
         </svg>
+      </div>
+      <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="100" id="embeddedAnime">
+        
+      </div>
+      </div>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/animejs"></script>
+<script>
+  // Use JavaScript to set the content of the div to the content of child.html
+  document.getElementById("embeddedAnime").innerHTML = '<iframe src="./assets/pages/anime.html" width="100%" height="100%" frameborder="0"></iframe>';
+</script>
 <script>
 var paths = [
 {id: '#path5419', d: 'm 574.27172,479 0,-15.65736 -32.82996,4.54569 z'},
